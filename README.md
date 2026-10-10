@@ -18,7 +18,7 @@ A web-based application for managing university research opportunities. Faculty 
 - **Database:** MariaDB
 - **Database connector:** MySQL Connector/Python
 - **Frontend:** HTML, CSS, JavaScript
-- **API testing:** Postman
+- **API testing:** Bruno
 
 ## Project Structure
 
@@ -29,6 +29,16 @@ Assignment/
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
+├── bruno/
+│   ├── bruno.json
+│   ├── get-all-opportunities.bru
+│   ├── get-opportunity-by-id.bru
+│   ├── create-opportunity.bru
+│   ├── update-opportunity.bru
+│   ├── close-opportunity.bru
+│   ├── delete-opportunity.bru
+│   ├── get-deleted-opportunity.bru
+│   └── invalid-opportunity.bru
 └── frontend/
     ├── index.html
     ├── style.css
@@ -115,3 +125,13 @@ The status can be `Open` or `Closed`.
 ## License
 
 This project was developed for an academic assignment.
+
+## API Testing
+
+The Bruno API collection is available in the `bruno/` directory. It includes requests for listing, retrieving, creating, updating, closing, and deleting research opportunities, along with validation and not-found tests.
+
+To use the collection, open the project folder in Bruno and import the `bruno/` collection. Start the Flask application before running requests. The collection targets `http://127.0.0.1:5000`.
+
+## Repository
+
+GitHub: https://github.com/Thor-lowkey/research-opportunity-portal
