@@ -1,0 +1,33 @@
+meta {
+  name: Create Opportunity
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://127.0.0.1:5000/api/opportunities
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Bruno API Test Opportunity",
+    "description": "Test opportunity created using the Bruno API collection.",
+    "research_area": "Artificial Intelligence",
+    "faculty_member": "Dr. Test Faculty",
+    "department": "Artificial Intelligence",
+    "required_skills": ["Python", "Machine Learning"],
+    "available_positions": 2,
+    "application_deadline": "2026-12-30",
+    "status": "Open"
+  }
+}
+
+assert {
+  res.status: 201
+}

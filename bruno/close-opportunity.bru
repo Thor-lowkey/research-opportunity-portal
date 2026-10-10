@@ -1,0 +1,25 @@
+meta {
+  name: Close Opportunity
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://127.0.0.1:5000/api/opportunities/6
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body {
+  {
+    "status": "Closed"
+  }
+}
+
+assert {
+  res.status: 200
+}

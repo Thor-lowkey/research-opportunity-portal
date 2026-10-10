@@ -1,0 +1,15 @@
+meta {
+  name: Get Opportunity by ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://127.0.0.1:5000/api/opportunities/6
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: 200
+}

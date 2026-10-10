@@ -1,0 +1,33 @@
+meta {
+  name: Update Opportunity
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://127.0.0.1:5000/api/opportunities/6
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Computer Vision Research Assistant",
+    "description": "Updated opportunity for testing the PUT endpoint.",
+    "research_area": "Computer Vision",
+    "faculty_member": "Dr. Ayesha Khan",
+    "department": "Artificial Intelligence",
+    "required_skills": ["Python", "OpenCV", "Deep Learning"],
+    "available_positions": 2,
+    "application_deadline": "2026-12-20",
+    "status": "Open"
+  }
+}
+
+assert {
+  res.status: 200
+}

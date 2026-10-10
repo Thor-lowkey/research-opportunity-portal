@@ -1,0 +1,15 @@
+meta {
+  name: Delete Opportunity
+  type: http
+  seq: 6
+}
+
+delete {
+  url: http://127.0.0.1:5000/api/opportunities/5
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: 200
+}
