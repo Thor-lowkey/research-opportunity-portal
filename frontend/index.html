@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Opportunity Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Research Portal</h1>
+            <p>Discover research opportunities and collaborate with faculty.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-heading">
+            <div>
+                <h2>Research Opportunities</h2>
+                <p>Explore available projects and research positions.</p>
+            </div>
+            <button id="show-form-btn" type="button">+ Add Opportunity</button>
+        </section>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <section id="form-section" class="panel" hidden>
+            <h2 id="form-title">Add an Opportunity</h2>
+
+            <form id="opportunity-form">
+                <label for="title">Opportunity Title *</label>
+                <input id="title" name="title" required maxlength="255">
+
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+
+                <label for="research_area">Research Area</label>
+                <input id="research_area" name="research_area">
+
+                <label for="faculty_member">Faculty Member</label>
+                <input id="faculty_member" name="faculty_member">
+
+                <label for="department">Department</label>
+                <input id="department" name="department">
+
+                <label for="required_skills">Required Skills</label>
+                <input id="required_skills" name="required_skills"
+                       placeholder="Python, Machine Learning">
+
+                <label for="available_positions">Available Positions *</label>
+                <input id="available_positions" name="available_positions"
+                       type="number" min="1" value="1" required>
+
+                <label for="application_deadline">Application Deadline</label>
+                <input id="application_deadline" name="application_deadline"
+                       type="date">
+
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="Open">Open</option>
+                    <option value="Closed">Closed</option>
+                </select>
+
+                <div class="form-actions">
+                    <button type="submit" id="save-btn">Save Opportunity</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="opportunities-list" class="opportunities-grid">
+            <p>Loading opportunities...</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Research Opportunity Portal</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
